@@ -22,5 +22,6 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name="home"),
-
+    path('blogs/create-blog/',views.create_blog,name="create_blog"),
+    path('blogs/<str:id>/',views.blog_by_id,name="blog_by_id"),
 ]

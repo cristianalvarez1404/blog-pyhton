@@ -1,0 +1,32 @@
+{% extends './base.html'%}
+
+{%block content%}
+    <div style="overflow-x: auto; padding: 20px;">
+        <table style="border-collapse: collapse; width: 100%; text-align: left;"> 
+            <thead >
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px;">id</th>
+                    <th style="border: 1px solid black; padding: 8px;"> title</th>
+                    <th style="border: 1px solid black; padding: 8px;">description</th>
+                    <th style="border: 1px solid black; padding: 8px;">created at</th>
+                    <th style="border: 1px solid black; padding: 8px;">Edit</th>
+                    <th style="border: 1px solid black; padding: 8px;">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">{{ blog.id }}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{{ blog.title }}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{{ blog.description }}</td>
+                    <td style="border: 1px solid black; padding: 8px;">{{ blog.created_at }}</td>
+                    <td style="border: 1px solid black; padding: 8px;background-color:rgb(40, 167, 69);color:white">
+                        <a style="cursor:pointer;">Edit</a>
+                    </td>
+                    <td style="border: 1px solid black; padding: 8px;background-color:rgb(220, 53, 69);color:white">
+                        <a style="cursor:pointer;">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{%endblock%}

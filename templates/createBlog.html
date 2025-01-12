@@ -1,0 +1,13 @@
+{% extends "./base.html" %}
+
+{%block content%}
+    <div style="width:70%;margin:auto;">   
+        <h2>Create post</h2>
+        <form action="{% url 'create_blog' %}" method="POST" style="width:50%;display:flex;flex-direction:column;">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="title"/>
+            <textarea name="desc" placeholder="description" rows="15"></textarea>
+            <input type="submit" value="create"/>
+        </form>
+    </div>
+{%endblock%}
