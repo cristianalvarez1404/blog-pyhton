@@ -1,15 +1,18 @@
 {% extends './base.html' %}
 {%block content %}
-    <div  style="width:90%;margin-left:auto;margin-right:auto;background-color:rgb(40, 167, 69);">
-        <h1>Hello desde el home</h1>
+    <div class="p-5" style="width:90%;margin-left:auto;margin-right:auto;">
+        <h1 class="mb-5">Tasks</h1>
         {% for blog in blogs %}
-            <a style="cursor:pointer;text-decoration:none;color:black;" href="{% url 'blog_by_id' blog.id %}">
-                <h2>{{blog.title}}</h2>
-                <p>{{blog.description | truncatechars:100}}</p>
-                <small>created {{blog.created_at}}</small>
+        <div>
+            <a class="w-100 mb-5 card text-decoration-none" style="width: 18rem;" href="{% url 'blog_by_id' blog.id %}">
+                <div class="card-body">
+                  <h5 class="card-title">{{blog.title}}</h5>
+                  <p class="card-text">{{blog.description | truncatechars:100}}</p>
+                  <small>created {{blog.created_at}}</small>
+                </div>
             </a>
-            <br>
-            <hr>
+        </div>
+            
         {%endfor%}
     </div>
 {%endblock content%}
