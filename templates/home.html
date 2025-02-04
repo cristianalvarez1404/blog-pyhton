@@ -1,18 +1,16 @@
 {% extends './base.html' %}
+{% load static %}
+
 {%block content %}
-    <div class="p-5" style="width:90%;margin-left:auto;margin-right:auto;">
+    <div class="p-5">
         <h1 class="mb-5">Tasks</h1>
-        {% for blog in blogs %}
-        <div>
-            <a class="w-100 mb-5 card text-decoration-none" style="width: 18rem;" href="{% url 'blog_by_id' blog.id %}">
-                <div class="card-body">
-                  <h5 class="card-title">{{blog.title}}</h5>
-                  <p class="card-text">{{blog.description | truncatechars:100}}</p>
-                  <small>created {{blog.created_at}}</small>
-                </div>
-            </a>
+        <div class="d-flex flex-wrap gap-5 justify-content-between">
+                {% for blog in blogs %}
+                    {% include './components/card.html' %}
+                {%endfor%}
         </div>
-            
-        {%endfor%}
+        <div class="d-flex justify-content-center align-items-center my-5">
+            <img src="{% static 'img/img4.png'%}" alt="" style="width:500px;transform:rotate(45deg)"/>
+        </div>
     </div>
 {%endblock content%}

@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.shortcuts import render
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
@@ -25,3 +27,6 @@ urlpatterns = [
     path('blogs/create-blog/',views.create_blog,name="create_blog"),
     path('blogs/<str:id>/',views.blog_by_id,name="blog_by_id"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
